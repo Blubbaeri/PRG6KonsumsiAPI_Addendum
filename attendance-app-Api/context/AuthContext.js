@@ -8,8 +8,10 @@ export const AuthProvider = ({ children }) => {
     nama: "Budi Susanto"
   });
 
+  const BASE_URL = "http://192.168.100.6:8080/api/presensi";
+
   return (
-    <AuthContext.Provider value={{ userData }}>
+    <AuthContext.Provider value={{ userData, BASE_URL }}>
       {children}
     </AuthContext.Provider>
   );

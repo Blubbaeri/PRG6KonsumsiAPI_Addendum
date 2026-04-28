@@ -15,7 +15,7 @@ import { MaterialIcons } from '@expo/vector-icons';
 
 const HomeScreen = () => {
 
-  const { userData } = useContext(AuthContext);
+  const { userData, BASE_URL } = useContext(AuthContext);
 
   const [isCheckedIn, setIsCheckedIn] = useState(false);
   const [currentTime, setCurrentTime] = useState('Memuat jam...');
@@ -23,8 +23,7 @@ const HomeScreen = () => {
   const noteInputRef = useRef(null);
   const [isPosting, setIsPosting] = useState(false);
 
-  // ❗ GANTI IP INI
-  const BASE_URL = "http://10.1.10.140:8080/api/presensi";
+
 
   const attendanceStats = useMemo(() => {
     return { totalPresent: 12, totalAbsent: 2 };

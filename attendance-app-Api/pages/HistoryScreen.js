@@ -14,7 +14,7 @@ import { AuthContext } from '../context/AuthContext';
 
 export default function HistoryScreen({ navigation }) {
 
-    const { userData } = useContext(AuthContext);
+    const { userData, BASE_URL } = useContext(AuthContext);
 
     const [historyData, setHistoryData] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
@@ -23,8 +23,7 @@ export default function HistoryScreen({ navigation }) {
     const [page, setPage] = useState(0);
     const [isLastPage, setIsLastPage] = useState(false);
 
-    // ❗ GANTI IP
-    const BASE_URL = "http://10.1.10.140:8080/api/presensi";
+
 
     // 🔥 FETCH API
     const fetchAttendanceData = async (targetPage = 0) => {
